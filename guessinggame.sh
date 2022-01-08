@@ -19,7 +19,6 @@ do
   
   for (( i=$actual_number-2;i<=$actual_number+2;i++ )) 
   do
-
  
   if [[ $number -eq i ]]
   then
@@ -39,10 +38,7 @@ echo "Inside elif"
   break 
 
   fi
-
   done
-
- 
 
   echo "Please guess it again..!"
   read number
