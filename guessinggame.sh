@@ -1,4 +1,4 @@
-#!/bin/usr/bash
+#!/bin/bash
 
 function user_input {
 
@@ -9,7 +9,7 @@ read number
 
 user_input
 
-actual_number=$(ls -l | wc -l)
+actual_number=$(ls -la | wc -l)
 
 while [[ $number -ne $actual_number ]]
 
