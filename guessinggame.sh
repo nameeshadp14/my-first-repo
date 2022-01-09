@@ -1,25 +1,24 @@
-#!/bin/usr/bash
+#!/bin/bash
 
-echo "PLease guess the number of files in the current directory"
+function user_input {
+
+echo "Please guess the number of files in the current directory"
 read number
+ 
+}
 
-actual_number=$(ls -l | wc -l)
+user_input
 
-echo "actual number is $actual_number"
-
+actual_number=$(ls -la | wc -l)
 
 while [[ $number -ne $actual_number ]]
 
 do
 
   echo "Your guess is wrong"
-
-   start= expr  $actual_number - 2
-   end= expr $actual_number + 2
   
   for (( i=$actual_number-2;i<=$actual_number+2;i++ )) 
   do
-
  
   if [[ $number -eq i ]]
   then
@@ -29,7 +28,7 @@ do
  
   elif [[ $number -gt i && $number -le $actual_number+2 ]]
   then
-echo "Inside elif"
+
   continue
 
   else  
@@ -39,13 +38,9 @@ echo "Inside elif"
   break 
 
   fi
-
   done
 
- 
-
-  echo "Please guess it again..!"
-  read number
+  user_input
 
 done
 echo "Congratulations...! , You're right the number of files are $number"
